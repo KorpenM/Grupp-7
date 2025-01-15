@@ -51,7 +51,7 @@ string FormatSecNumber(string secNumb)
     string dd = secNumb.Substring(4, 2);
     string xxxx = secNumb.Substring(6, 4);
 
-    string formattedSecNumber = $"{yy}{mm}{dd}-{xxxx} ";
+    string formattedSecNumber = $"{yy}{mm}{dd}-{xxxx}";
     
     return formattedSecNumber;
 }

@@ -11,7 +11,7 @@ namespace Grupp_7
         {
             // given
             string secNumb = "1234567890";
-            string expected = "Your security number is 1234567890-7890 ";
+            string expected = "Your security number is 123456-7890";
 
             // when
             string? result = CheckSecNumber(secNumb);
@@ -41,13 +41,13 @@ namespace Grupp_7
         {
             // given
             string? secNumb = null; // Ett ogiltigt personnummer (null input)
-            string expected = null;
+            string expected = "Input is not valid";
 
             // when
             string? result = CheckSecNumber(secNumb);
 
             // then
-            Assert.Null(result); // Kontrollerar resultat null
+            Assert.Equal(expected, result); // Kontrollerar resultat null
         }
 
         // Test för personnummer med icke-numeriska tecken
@@ -71,13 +71,13 @@ namespace Grupp_7
         {
             // given
             string secNumb = "1234567890"; // Ex på personnummer
-            string expected = "1234567890-7890 ";
+            string expected = "123456-7890";
 
             // when
-            string formattedSecNumber = FormatSecNumber(secNumb);
+            string result = FormatSecNumber(secNumb);
 
             // then
-            Assert.Equal(expected, formattedSecNumber); // Kontrollerar korrekt format
+            Assert.Equal(expected, result); // Kontrollerar korrekt format
         }
 
         // Metoderna som testas i applikationen
@@ -99,7 +99,7 @@ namespace Grupp_7
             string dd = secNumb.Substring(4, 2);
             string xxxx = secNumb.Substring(6, 4);
 
-            return $"{yy}{mm}{dd}-{xxxx} ";
+            return $"{yy}{mm}{dd}-{xxxx}";
         }
     }
 }
