@@ -6,9 +6,13 @@ using System.Collections.Generic;
 Console.Write("Please type in your security number (YYMMDDXXXX): ");
 string? secNumb = Console.ReadLine();
 
-if (CheckSecNumber(secNumb)!= null)
+Console.Write("Were you born before the year 2000? (Y/N)");
+string answer = Console.ReadLine();
+string answerLower = answer.ToLower();
+
+if (CheckSecNumber(secNumb, answerLower)!= null)
 {
-    System.Console.WriteLine(CheckSecNumber(secNumb));
+    System.Console.WriteLine(CheckSecNumber(secNumb, answerLower));
 }
 else 
 {
@@ -25,15 +29,14 @@ Console.ReadKey();
 
 
 //Check if the number is correct length (10 characters) and numeric
-string? CheckSecNumber(string secNumb)
+string? CheckSecNumber(string secNumb, string answerLower)
 {
     int counter = secNumb.Length;
 
     if (counter == 10)
-    {
-        string formattedSecNumber = FormatSecNumber(secNumb);
+    {        
+        string formattedSecNumber = FormatSecNumber(secNumb, answerLower);
         return "Your security number is " + formattedSecNumber;
-
     }
     else if (secNumb.Length != 10)
     {
@@ -44,7 +47,7 @@ string? CheckSecNumber(string secNumb)
 }
 
 //Format the number to yymmdd-xxxx
-string FormatSecNumber(string secNumb)
+string FormatSecNumber(string secNumb, string answerLower)
 {
     if (secNumb.Length != 10)
     {
@@ -56,8 +59,17 @@ string FormatSecNumber(string secNumb)
     string dd = secNumb.Substring(4, 2);
     string xxxx = secNumb.Substring(6, 4);
 
-    string formattedSecNumber = $"{yy}{mm}{dd}-{xxxx}";
-    
-    return formattedSecNumber;
+    int ageCheck = int.Parse(yy);
+
+    if (answerLower == "y" && ageCheck <= 24)
+    {
+        string formattedSecNumber = $"{yy}{mm}{dd}+{xxxx}";
+        return formattedSecNumber;
+    }
+    else
+    {
+        string formattedSecNumber = $"{yy}{mm}{dd}-{xxxx}";
+        return formattedSecNumber;
+    }
 }
 
