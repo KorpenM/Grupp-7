@@ -29,5 +29,5 @@ jobs:
 
             - name: Build and push docker image
               run: |
-                docker build -t KorpenM/Grupp-7 .
-                docker push KorpenM/Grupp-7
+                docker build -t korpenm/grupp-7 .
+                docker push korpenm/grupp-7
