@@ -1,5 +1,4 @@
 name: Run Unit Tests on Push
-
 on:
   push:
     branches:
@@ -10,22 +9,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1 # Fetching only the latest commit
+    - uses: actions/checkout@v3
 
+    - name: Set up .NET 
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.x'
 
-      - name: Set up .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '9.x'  # Uses .NET version currently working
+    - name: restore dependencies
+      run: dotnet restore
 
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-
-      - name: Run Unit tests
-        run: dotnet test --configuration Release
+    - name: Run Unit tests
+      run: dotnet test
           
