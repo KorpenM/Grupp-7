@@ -46,6 +46,11 @@ string? CheckSecNumber(string secNumb)
 //Format the number to yymmdd-xxxx
 string FormatSecNumber(string secNumb)
 {
+    if (secNumb.Length != 10)
+    {
+        throw new ArgumentException("Input must be 10 characters.");
+    }
+
     string yy = secNumb.Substring(0, 2);
     string mm = secNumb.Substring(2, 2);
     string dd = secNumb.Substring(4, 2);
