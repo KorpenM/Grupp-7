@@ -3,7 +3,7 @@ using System.Collections.Generic;
  UI
 *******************************************************/
 
-Console.Write("Please type in your security number...");
+Console.Write("Please type in your security number (YYMMDDXXXX): ");
 string? secNumb = Console.ReadLine();
 
 if (CheckSecNumber(secNumb)!= null)
@@ -12,7 +12,7 @@ if (CheckSecNumber(secNumb)!= null)
 }
 else 
 {
-    Console.WriteLine("Value is null");
+    Console.WriteLine("Value is null/input invalid.");
 }
 
 Console.WriteLine("Press any key to exit program...");
@@ -24,7 +24,7 @@ Console.ReadKey();
 *******************************************************/
 
 
-//Check if the number is correct length (10 characters)
+//Check if the number is correct length (10 characters) and numeric
 string? CheckSecNumber(string secNumb)
 {
     int counter = secNumb.Length;
