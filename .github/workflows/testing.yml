@@ -54,5 +54,6 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push (X):latest # Replace (X) with DockerHub username
+            docker build -t aob123/Grupp-7 .
+            docker push aob123/Grupp-7
           
