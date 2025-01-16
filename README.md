@@ -12,9 +12,9 @@ Användaren ombeds att mata in ett svenskt personummer (format YYMMDDXXXX) och a
 Samt så ber applikationen använder att ange om dom föddes innan millennieskiftet, vilket hjälper den att beräkna om dom redan har fyllt 100. 
 Om användaren skulle vara 100 år gammal så kommer applikationen att använda korrekt format när den skriver ut deras personnummer.
 
-# Installation och Användning (Locally)
+# Installation och Användning
 
-För att köra programmet lokalt:
+För att köra programmet:
 
 1. Clone repository:
 '''bash
