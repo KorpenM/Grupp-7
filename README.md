@@ -75,9 +75,6 @@ Vi har konfigurerat GitHub Actions för att automatisera följande:
 
 För att se resultaten av testerna eller byggflödena, navigera till *Actions*-fliken i GitHub.
 
-- [Unit Test Workflow (testing.yml)](https://github.com/<username>/<repo>/actions/workflows/testing.yml)
-- [Docker Publish Workflow (docker.yml)](https://github.com/<username>/<repo>/actions/workflows/docker.yml)
-
 
 ## Personnummer i Sverige
 
