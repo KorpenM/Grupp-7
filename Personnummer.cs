@@ -6,7 +6,7 @@ using System.Collections.Generic;
 Console.Write("Please type in your security number (YYMMDDXXXX): ");
 string? secNumb = Console.ReadLine();
 
-Console.Write("Were you born before the year 2000? (Y/N)");
+Console.Write("Were you born before the year 2000? (Y/N): ");
 string answer = Console.ReadLine();
 string answerLower = answer.ToLower();
 
@@ -63,7 +63,7 @@ string FormatSecNumber(string secNumb, string answerLower)
 
     if (answerLower == "y" && ageCheck <= 24)
     {
-        string formattedSecNumber = $"{yy}{mm}{dd}+{xxxx}";
+        string formattedSecNumber = $"{yy}{mm}{dd}-{xxxx}";
         return formattedSecNumber;
     }
     else
