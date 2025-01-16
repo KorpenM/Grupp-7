@@ -9,6 +9,8 @@
 
 Den här applikationen kontrollerar svenska personnummer.
 Användaren ombeds att mata in ett svenskt personummer (format YYMMDDXXXX) och applikationen veriferar att numret är korrekt.
+Samt så ber applikationen använder att ange om dom föddes innan millennieskiftet, vilket hjälper den att beräkna om dom redan har fyllt 100. 
+Om användaren skulle vara 100 år gammal så kommer applikationen att använda korrekt format när den skriver ut deras personnummer.
 
 # Installation och Användning (Locally)
 
@@ -88,6 +90,9 @@ YYMMDD: Första sex siffrorna representerar födelsedatumet i formatet år (YY),
 XXXX: Fyra sista siffrorna är ett unikt löpnummer som identifierar individen.
 De tre första siffrorna i detta nummer används för att särskilja individer som är födda på samma dag,
 medan den sista siffran är en kontrollsiffra som används för att säkerställa att numret är korrekt.
+
+I dom flesta fall så används ett bindestreck (-) för att koppla födelsedatum med löp- och kontrollnummer (YYMMDD-XXXX), 
+men om en person skulle fylla 100 så används ett plustecken istället vid formateringen av deras personnummer (YYMMDD+XXXX). 
 
 Applikationen verifierar om ett inmatat personnummer har korrekt längd, om alla tecken är numeriska, och om numret följer det svenska formatet.
 
