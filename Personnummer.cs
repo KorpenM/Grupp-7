@@ -59,6 +59,13 @@ string FormatSecNumber(string secNumb, string answerLower)
     string dd = secNumb.Substring(4, 2);
     string xxxx = secNumb.Substring(6, 4);
 
+
+    if (!int.TryParse(mm, out int month) || month < 1 || month > 12)
+    {
+        throw new ArgumentException("Invalid month in security number.");
+    }
+
+
     int ageCheck = int.Parse(yy);
 
     if (answerLower == "y" && ageCheck <= 24)
